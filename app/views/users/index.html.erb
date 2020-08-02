@@ -1,6 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
+<div class="container-fluid text-center">
+  <div class="row">
+    <div class="col-12 text-center bg-info">
+      <h1 class="text-uppercase text-white">Private Events</h1>
+    </div>
+  </div>
+  <div class="links-container row d-flex align-items-center">
+    <div class="col-6 text-center link_cont">
+      <%= link_to 'Sign Up', new_user_path , class: 'link text-uppercase' %>
+    </div>
+    <div class="col-6 text-center link_cont">
+      <%= link_to 'Sign In', new_user_path , class: 'link text-uppercase' %>
+    </div>
+  </div>
+</div>
 
 <table>
   <thead>
@@ -29,5 +43,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New User', new_user_path %>
