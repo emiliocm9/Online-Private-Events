@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container-fluid text-center">
+  <div class="row">
+    <div class="col-12 text-center bg-info">
+      <h1 class="text-uppercase text-white">Private Events</h1>
+    </div>
+  </div>
+  <div class="links-container row d-flex align-items-center">
+    <div class="col-6 text-center link_cont">
+      <%= link_to 'Sign Up', new_user_path , class: 'link text-uppercase' %>
+    </div>
+    <div class="col-6 text-center link_cont">
+      <%= link_to 'Sign In', new_user_path , class: 'link text-uppercase' %>
+    </div>
+  </div>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.username %></td>
+        <td><%= user.email %></td>
+        <td><%= user.password %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

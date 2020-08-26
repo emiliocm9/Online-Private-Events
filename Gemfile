@@ -6,7 +6,13 @@ ruby '2.6.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.3'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+group :development, :test do
+ gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+end
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -35,6 +41,15 @@ gem 'jbuilder', '~> 2.5'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+
+# The most popular HTML, CSS, and JavaScript framework for developing responsive
+gem 'bootstrap', '~> 4.5'
+
+# This gem provides jQuery and the jQuery-ujs driver for your Rails 4+ application.
+gem 'jquery-rails', '~> 4.4'
+
+# The bcrypt Ruby gem provides a simple wrapper for safely handling passwords.
+gem 'bcrypt', '~> 3.1', '>= 3.1.12'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
